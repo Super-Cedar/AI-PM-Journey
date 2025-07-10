@@ -1,0 +1,157 @@
+一、 核心模型与架构 (Core Models & Architectures)
+    这是构成现代AI技术基石的模型和结构。
+
+    神经网络 (Neural Networks - NN)
+
+前馈神经网络 (Feedforward Neural Networks - FNN)：最简单的神经网络类型，信息单向流动。
+
+卷积神经网络 (Convolutional Neural Networks - CNN)：主要用于图像识别和处理，通过卷积层提取空间特征。
+
+循环神经网络 (Recurrent Neural Networks - RNN)：用于处理序列数据（如文本、时间序列），但有梯度消失/爆炸问题。
+
+长短期记忆网络 (Long Short-Term Memory - LSTM)：RNN的一种变体，通过门控机制解决了长期依赖问题。
+
+门控循环单元 (Gated Recurrent Unit - GRU)：LSTM的简化版本，计算效率更高。
+
+    Transformer架构 (Transformer Architecture)：当前自然语言处理（NLP）领域的主流架构，完全基于自注意力机制。
+
+自注意力机制 (Self-Attention Mechanism)：核心思想，允许模型在处理序列时权衡不同单词的重要性。
+
+编码器-解码器架构 (Encoder-Decoder Architecture)：常用于序列到序列任务（如机器翻译）的框架。
+
+多头注意力 (Multi-Head Attention)：并行运行多个注意力机制，从不同角度捕捉信息。
+
+    生成模型 (Generative Models)
+
+生成对抗网络 (Generative Adversarial Networks - GAN)：通过生成器和判别器的对抗训练来生成新的数据。
+
+变分自编码器 (Variational Autoencoders - VAE)：一种生成模型，用于学习数据的潜在分布。
+
+扩散模型 (Diffusion Models)：通过逐步从噪声中恢复数据来生成高质量样本，是当前图像生成领域的最前沿技术。
+
+    基础模型 (Foundation Models)
+
+大规模语言模型 (Large Language Models - LLM)：在海量文本数据上预训练的、参数量巨大的模型，如GPT系列、PaLM等。
+
+视觉大模型 (Large Vision Models)：在海量图像/视频数据上训练的基础模型。
+
+
+
+二、 模型优化与定制技术 (Model Optimization & Customization)
+这些技术用于让大模型更高效、更便宜，或适应特定任务。
+
+迁移学习 (Transfer Learning)：将一个在任务A上训练好的模型，微调后用于任务B。
+
+预训练与微调 (Pre-training and Fine-tuning)：先在通用大规模数据上进行预训练，再在特定任务的小数据集上进行微调。
+
+提示工程 (Prompt Engineering)：通过设计和优化输入给模型的指令（Prompt），来引导模型产生期望的输出。
+
+上下文学习 (In-Context Learning - ICL)：在Prompt中提供少量示例，让模型在不更新参数的情况下学习并完成任务。
+
+指令微调 (Instruction-Tuning)：使用大量“指令-响应”格式的数据对预训练模型进行微调，使其更好地理解和遵循人类指令。
+
+模型压缩 (Model Compression)
+
+    知识蒸馏 (Knowledge Distillation)：用一个大的“教师模型”来训练一个小的“学生模型”。
+
+    剪枝 (Pruning)：移除模型中不重要的权重或连接。
+
+    量化 (Quantization)：使用较低精度的数据类型（如8位整数）来存储和计算模型权重，减少模型大小和计算量。
+
+高效微调技术 (Parameter-Efficient Fine-Tuning - PEFT)
+
+    LoRA (Low-Rank Adaptation)：通过引入并训练低秩矩阵来适配大模型，而无需改动原始权重。
+
+    Adapter Tuning：在模型层之间插入少量可训练的“适配器”模块。
+
+
+三、 与模型交互及应用 (Model Interaction & Application)
+这些术语描述了如何使用和部署AI模型。
+
+推理 (Inference)：使用训练好的模型进行预测或生成内容的过程。
+
+API (Application Programming Interface)：模型服务提供商（如OpenAI）提供的，允许开发者将模型功能集成到自己应用中的接口。
+
+向量数据库 (Vector Database)：专门用于存储和高效检索向量嵌入（Embeddings）的数据库，是实现语义搜索和RAG的核心。
+
+嵌入 (Embeddings)：将文本、图像等高维数据转换为低维、稠密的向量表示，捕捉其语义信息。
+
+检索增强生成 (Retrieval-Augmented Generation - RAG)：将大语言模型与外部知识库（通过向量检索）相结合，以减少幻觉并提供更准确、实时的信息。
+
+AI智能体 (AI Agent)：能够自主感知环境、进行决策和执行动作的AI系统，通常结合了LLM的推理能力和外部工具的使用。
+
+思维链 (Chain of Thought - CoT)：一种Prompting技术，引导模型在给出最终答案前，先输出一步步的推理过程，以提升复杂问题的解决能力。
+
+插件/工具使用 (Plugins / Tool Use)：允许模型调用外部工具（如计算器、搜索引擎、代码解释器）来扩展其能力范围。
+
+
+四、 关键技术概念 (Key Technology Concepts)
+这些是理解AI模型工作原理所需的基础概念。
+
+机器学习 (Machine Learning - ML)
+
+    监督学习 (Supervised Learning)：使用有标签的数据进行训练。
+
+    无监督学习 (Unsupervised Learning)：使用无标签的数据，学习数据的内在结构或模式。
+
+    强化学习 (Reinforcement Learning - RL)：通过与环境交互，根据获得的奖励或惩罚来学习最优策略。
+
+深度学习 (Deep Learning)：使用包含多个隐藏层的深层神经网络的机器学习。
+
+损失函数 (Loss Function)：衡量模型预测值与真实值之间差距的函数。
+
+梯度下降 (Gradient Descent)：一种优化算法，通过计算损失函数对模型参数的梯度来更新参数，以最小化损失。
+
+反向传播 (Backpropagation)：在神经网络中高效计算梯度的算法。
+
+参数 (Parameters)与超参数 (Hyperparameters)：参数是模型通过训练学习到的权重；超参数是训练前手动设置的参数（如学习率、网络层数）。
+
+上下文窗口 (Context Window)：模型在处理输入时能够考虑的最大token（词或子词）数量。
+
+
+
+五、 模型评估与安全 (Model Evaluation & Safety)
+确保AI模型可靠、公正和安全的技术与概念。
+
+评估基准 (Benchmarks)：用于衡量和比较不同模型性能的标准化数据集和任务（如MMLU, GLUE）。
+
+困惑度 (Perplexity - PPL)：衡量语言模型预测下一个词能力好坏的指标，越低越好。
+
+对齐 (Alignment)：确保AI模型的行为和目标与人类的价值观和意图相一致的过程。
+
+AI安全 (AI Safety)：研究和预防AI可能带来的长期、大规模风险的领域。
+
+可解释性AI (Explainable AI - XAI)：旨在让AI模型的决策过程对人类透明和可理解的技术。
+
+偏见 (Bias)：模型由于训练数据或算法设计中的缺陷而产生的系统性、不公平的倾向。
+
+幻觉 (Hallucination)：AI模型（尤其是LLM）生成看似合理但实际上是虚假或与事实不符的信息。
+
+红队测试 (Red Teaming)：通过模拟恶意攻击来主动发现和修复模型漏洞和安全问题的过程。
+
+从人类反馈中强化学习 (Reinforcement Learning from Human Feedback - RLHF)：通过收集人类对模型输出的偏好排序，来训练一个奖励模型，并用它来微调和对齐大模型。
+
+
+
+六、 多模态与前沿方向 (Multimodality & Frontier Directions)
+      代表了AI未来发展的趋势。
+
+多模态AI (Multimodal AI)：能够同时理解和处理多种类型数据（如文本、图像、音频、视频）的AI模型。
+
+文生图 (Text-to-Image)：如DALL-E, Midjourney, Stable Diffusion。
+
+文生视频 (Text-to-Video)：如Sora。
+
+视觉语言模型 (Vision-Language Models - VLM)：能够理解图像并用自然语言进行描述或问答的模型，如GPT-4o。
+
+世界模型 (World Models)：AI系统内部构建的对世界如何运作的模拟和理解，使其能进行更深层次的规划和预测。
+
+具身智能 (Embodied AI)：将AI智能体置于物理或虚拟的身体（如机器人）中，使其能够通过与物理世界互动来学习和行动。
+
+小语言模型 (Small Language Models - SLM)：参数量相对较小（通常在10亿到70亿之间），但在特定领域或任务上表现优异，更易于在端侧设备部署。
+
+端侧AI (On-device AI / Edge AI)：在个人设备（如手机、PC）而非云端服务器上直接运行AI模型，具有低延迟和保护隐私的优势。
+
+通用人工智能 (Artificial General Intelligence - AGI)：具备与人类同等或更高智慧，能够理解、学习和应用其智能来解决任何问题的假设性AI。
+
+——2025/7/10
